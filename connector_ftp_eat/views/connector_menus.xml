@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_connector_ftp_endpoint_eat" name="FTP Endpoint" parent="connector_base_eat.menu_odoo_connector_eat"/>
+        <menuitem id="menu_process_endpoint_ftp_eat" name="FTP" parent="menu_connector_ftp_endpoint_eat" action="eat_process_endpoint_ftp_action"/>
+        <menuitem id="menu_process_endpoint_sftp_eat" name="SFTP" parent="menu_connector_ftp_endpoint_eat" action="eat_process_endpoint_sftp_action"/>
+    </data>
+</odoo>

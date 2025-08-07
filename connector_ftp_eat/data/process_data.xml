@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- process protocol-->
+        <record id="process_ftp_feed_eat" model="process.protocol.eat">
+            <field name="name">FTP(SFTP) feed process</field>
+            <field name="process">process.ftp.feed.eat</field>
+            <field name="business_type">other</field>
+            <field name="process_type">feed</field>
+            <field name="description">Download the ftp(sftp) files to odoo</field>
+        </record>
+        <record id="process_ftp_ack_eat" model="process.protocol.eat">
+            <field name="name">FTP(SFTP) ack process</field>
+            <field name="process">process.ftp.ack.eat</field>
+            <field name="business_type">other</field>
+            <field name="process_type">ack</field>
+            <field name="description">ftp(sftp) files ack</field>
+        </record>
+        <record id="process_inventory_import_eat_xlsx" model="process.protocol.eat">
+            <field name="name">Inventory Import(xlsx)</field>
+            <field name="process">process.inventory.import.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_inventory_sheet_import_eat_xlsx"/>
+            <field name="business_type">inventory</field>
+            <field name="process_type">import</field>
+        </record>
+        <record id="process_inventory_export_eat_xlsx_ftp" model="process.protocol.eat">
+            <field name="name">FTP(SFTP) Inventory Export(xlsx)</field>
+            <field name="process">process.inventory.ftp.export.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_inventory_sheet_export_eat_xlsx"/>
+            <field name="business_type">inventory</field>
+            <field name="process_type">export</field>
+            <field name="description">Export Inventory to FTP/SFTP by XLSX</field>
+        </record>
+        <record id="process_invoice_import_eat_xlsx" model="process.protocol.eat">
+            <field name="name">Invoice Import(xlsx)</field>
+            <field name="process">process.invoice.import.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_invoice_sheet_import_eat_xlsx"/>
+            <field name="business_type">invoice</field>
+            <field name="process_type">import</field>
+        </record>
+        <record id="process_invoice_export_eat_xlsx_ftp" model="process.protocol.eat">
+            <field name="name">FTP(SFTP) Invoice Export(xlsx)</field>
+            <field name="process">process.invoice.ftp.export.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_invoice_sheet_export_eat_xlsx"/>
+            <field name="business_type">invoice</field>
+            <field name="process_type">export</field>
+            <field name="description">Export Invoice to FTP by XLSX</field>
+        </record>
+        <record id="process_order_import_eat_xlsx" model="process.protocol.eat">
+            <field name="name">Order Import(xlsx)</field>
+            <field name="process">process.order.import.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_order_sheet_import_eat_xlsx"/>
+            <field name="business_type">order</field>
+            <field name="process_type">import</field>
+        </record>
+        <record id="process_order_export_eat_xlsx_ftp" model="process.protocol.eat">
+            <field name="name">FTP(SFTP) Order Export(xlsx)</field>
+            <field name="process">process.order.ftp.export.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_order_sheet_export_eat_xlsx"/>
+            <field name="business_type">order</field>
+            <field name="process_type">export</field>
+            <field name="description">Export Order to FTP by XLSX</field>
+        </record>
+        <record id="process_product_import_eat_xlsx" model="process.protocol.eat">
+            <field name="name">Product Import(xlsx)</field>
+            <field name="process">process.product.import.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_product_sheet_import_eat_xlsx"/>
+            <field name="business_type">product</field>
+            <field name="process_type">import</field>
+        </record>
+        <record id="process_product_export_eat_xlsx_ftp" model="process.protocol.eat">
+            <field name="name">FTP(SFTP) Product Export(xlsx)</field>
+            <field name="process">process.product.ftp.export.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_product_sheet_export_eat_xlsx"/>
+            <field name="business_type">product</field>
+            <field name="process_type">export</field>
+            <field name="description">Export Product to FTP by XLSX</field>
+        </record>
+        <record id="process_shipment_import_eat_xlsx" model="process.protocol.eat">
+            <field name="name">Shipment Import(xlsx)</field>
+            <field name="process">process.shipment.import.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_shipment_sheet_import_eat_xlsx"/>
+            <field name="business_type">shipment</field>
+            <field name="process_type">import</field>
+        </record>
+        <record id="process_shipment_export_eat_xlsx_ftp" model="process.protocol.eat">
+            <field name="name">FTP(SFTP) Shipment Export(xlsx)</field>
+            <field name="process">process.shipment.ftp.export.eat</field>
+            <field name="mapper" ref="connector_base_eat.mapper_shipment_sheet_export_eat_xlsx"/>
+            <field name="business_type">shipment</field>
+            <field name="process_type">export</field>
+            <field name="description">Export Shipment to FTP by XLSX</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="eat_process_endpoint_ftp_form" model="ir.ui.view">
+            <field name="name">Process Endpoint FTP Form</field>
+            <field name="model">process.endpoint.ftp.eat</field>
+            <field name="arch" type="xml">
+                <form string="Process Endpoint FTP">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="host"/>
+                                <field name="port"/>
+                            </group>
+                            <group>
+                                <field name="user"/>
+                                <field name="password" password="True"/>
+                                <field name="security"/>
+                                <field name="no_passive"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="eat_process_endpoint_ftp_tree" model="ir.ui.view">
+            <field name="name">Process Endpoint FTP Tree</field>
+            <field name="model">process.endpoint.ftp.eat</field>
+            <field name="arch" type="xml">
+                <list string="Process Endpoint FTP">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="eat_process_endpoint_ftp_search" model="ir.ui.view">
+            <field name="name">Process Endpoint FTP Search</field>
+            <field name="model">process.endpoint.ftp.eat</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Process Endpoint FTP">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- SFTP setting -->
+        <record id="eat_process_endpoint_sftp_form" model="ir.ui.view">
+            <field name="name">Process Endpoint sFTP Form</field>
+            <field name="model">process.endpoint.sftp.eat</field>
+            <field name="arch" type="xml">
+                <form string="Process Endpoint sFTP">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="host"/>
+                                <field name="port"/>
+                            </group>
+                            <group>
+                                <field name="user"/>
+                                <field name="password" password="True"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="eat_process_endpoint_sftp_tree" model="ir.ui.view">
+            <field name="name">Process Endpoint sFTP Tree</field>
+            <field name="model">process.endpoint.sftp.eat</field>
+            <field name="arch" type="xml">
+                <list string="Process Endpoint sFTP">
+                    <field name="name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="eat_process_endpoint_sftp_search" model="ir.ui.view">
+            <field name="name">Process Endpoint sFTP Search</field>
+            <field name="model">process.endpoint.sftp.eat</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Process Endpoint sFTP">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="eat_process_endpoint_ftp_action" model="ir.actions.act_window">
+            <field name="name">Process Endpoint FTP</field>
+            <field name="res_model">process.endpoint.ftp.eat</field>
+            <field name="view_id" ref="eat_process_endpoint_ftp_tree"/>
+		    <field name="search_view_id" ref="eat_process_endpoint_ftp_search"/>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record id="eat_process_endpoint_sftp_action" model="ir.actions.act_window">
+            <field name="name">Process Endpoint SFTP</field>
+            <field name="res_model">process.endpoint.sftp.eat</field>
+            <field name="view_id" ref="eat_process_endpoint_sftp_tree"/>
+		    <field name="search_view_id" ref="eat_process_endpoint_sftp_search"/>
+            <field name="view_mode">list,form</field>
+        </record>
+    </data>
+</odoo>
