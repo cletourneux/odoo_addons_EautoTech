@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="eat_connector_instance_form" model="ir.ui.view">
+            <field name="name">Connector Instance Form</field>
+            <field name="model">connector.instance.eat</field>
+            <field name="arch" type="xml">
+                <form string="Connector Instance">
+                    <header>
+                        <button name="button_confirm" invisible="state != 'draft'" type="object" string="Confirm"/>
+                        <button name="button_draft" invisible="state != 'done'" type="object" string="Draft"/>
+                        <button name="run_instance" invisible="state != 'done'" type="object" string="Run"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="active" invisible="1"/>
+                                <field name="name"/>
+                                <field name="company_id"/>
+                                <field name="pricelist_id"/>
+                                <field name="endpoint_id"/>
+                                <field name="warehouse_id"/>
+                                <field name="user_id"/>
+                                <field name="variant_creation"/>
+                                <field name="delivery_carrier_id"/>
+                                <field name="delivery_endpoint_id"/>
+                                <field name="invoice_tax_account_id"/>
+                            </group>
+                            <group>
+                                <field name="instance_location_name"/>
+                                <field name="instance_location_id"/>
+                                <field name="fee_product"/>
+                                <field name="tax_product"/>
+                                <field name="coupon_product"/>
+                                <field name="customize_product"/>
+                                <field name="process_start_date"/>
+                                <field name="process_period"/>
+                                <field name="credit_tax_account_id"/>
+                            </group>
+                        </group>
+                        <group string="Process Type">
+                            <group>
+                                <field name="product_process"/>
+                                <field name="inventory_process"/>
+                                <field name="invoice_process"/>
+                            </group>
+                            <group>
+                                <field name="order_process"/>
+                                <field name="shipment_process"/>
+                            </group>
+                        </group>
+                        <group string="Automation">
+                            <group>
+                                <field name="auto_confirm_order"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="eat_connector_instance_tree" model="ir.ui.view">
+            <field name="name">Connector Instance Tree</field>
+            <field name="model">connector.instance.eat</field>
+            <field name="arch" type="xml">
+                <list string="Connector Instance">
+                    <field name="name"/>
+                    <field name="pricelist_id"/>
+                    <field name="endpoint_id"/>
+                    <field name="warehouse_id"/>
+                    <field name="delivery_endpoint_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="eat_connector_instance_search" model="ir.ui.view">
+            <field name="name">Connector Instance Search</field>
+            <field name="model">connector.instance.eat</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Connector Instance">
+                    <field name="name"/>
+                    <filter name="archive" string="Archived" domain="[('active','=',False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="eat_connector_instance_action" model="ir.actions.act_window">
+            <field name="name">Connector Instance</field>
+            <field name="res_model">connector.instance.eat</field>
+            <field name="view_id" ref="eat_connector_instance_tree"/>
+		    <field name="search_view_id" ref="eat_connector_instance_search"/>
+            <field name="view_mode">list,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="eat_process_mapper_form" model="ir.ui.view">
+            <field name="name">Process Mapper Form</field>
+            <field name="model">process.mapper.eat</field>
+            <field name="arch" type="xml">
+                <form string="Process Mapper">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="type"/>
+                            </group>
+                            <group>
+                                <field name="model_name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="eat_process_mapper_tree" model="ir.ui.view">
+            <field name="name">Process Mapper Tree</field>
+            <field name="model">process.mapper.eat</field>
+            <field name="arch" type="xml">
+                <list string="Process Mapper">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="model_name"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="eat_process_mapper_search" model="ir.ui.view">
+            <field name="name">Process Mapper Search</field>
+            <field name="model">process.mapper.eat</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Process Mapper">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        
+        <record id="eat_process_mapper_action" model="ir.actions.act_window">
+            <field name="name">Process Mapper</field>
+            <field name="res_model">process.mapper.eat</field>
+            <field name="view_id" ref="eat_process_mapper_tree"/>
+		    <field name="search_view_id" ref="eat_process_mapper_search"/>
+            <field name="view_mode">list,form</field>
+        </record>
+    </data>
+</odoo>

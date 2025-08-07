@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="eat_product_tmpl_instance_form" model="ir.ui.view">
+            <field name="name">Product Template Instance Form</field>
+            <field name="model">product.template.instance.eat</field>
+            <field name="arch" type="xml">
+                <form string="Product Template Instance">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_tmpl_id"/>
+                                <field name="instance_id"/>
+                            </group>
+                            <group>
+                                <field name="instance_product_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="eat_product_tmpl_instance_tree" model="ir.ui.view">
+            <field name="name">Product Template Instance Tree</field>
+            <field name="model">product.template.instance.eat</field>
+            <field name="arch" type="xml">
+                <list string="Product Template Instance">
+                    <field name="product_tmpl_id"/>
+                    <field name="instance_id"/>
+                    <field name="instance_product_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="eat_product_tmpl_instance_search" model="ir.ui.view">
+            <field name="name">Product Template Instance Search</field>
+            <field name="model">product.template.instance.eat</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Product Template Instance">
+                    <field name="product_tmpl_id"/>
+                    <field name="instance_product_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="eat_product_template_instance_action" model="ir.actions.act_window">
+            <field name="name">Product Template Instance</field>
+            <field name="res_model">product.template.instance.eat</field>
+            <field name="view_id" ref="eat_product_tmpl_instance_tree"/>
+		    <field name="search_view_id" ref="eat_product_tmpl_instance_search"/>
+            <field name="view_mode">list,form</field>
+        </record>
+    </data>
+</odoo>

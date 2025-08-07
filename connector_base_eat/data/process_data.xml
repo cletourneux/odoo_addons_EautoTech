@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- process mapper-->
+        <record id="mapper_inventory_sheet_export_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Inventory Export Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.inventory.sheet.export.eat</field>
+        </record>
+        <record id="mapper_inventory_sheet_import_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Inventory Import Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.inventory.sheet.import.eat</field>
+        </record>
+        <record id="mapper_invoice_sheet_export_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Invoice Export Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.invoice.sheet.export.eat</field>
+        </record>
+        <record id="mapper_invoice_sheet_import_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Invoice Import Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.invoice.sheet.import.eat</field>
+        </record>
+        <record id="mapper_order_sheet_export_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Order Export Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.order.sheet.export.eat</field>
+        </record>
+        <record id="mapper_order_sheet_import_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Order Import Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.order.sheet.import.eat</field>
+        </record>
+        <record id="mapper_product_sheet_export_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Product Export Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.product.sheet.export.eat</field>
+        </record>
+        <record id="mapper_product_sheet_import_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Product Import Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.product.sheet.import.eat</field>
+        </record>
+        <record id="mapper_shipment_sheet_export_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Shipment Export Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.shipment.sheet.export.eat</field>
+        </record>
+        <record id="mapper_shipment_sheet_import_eat_xlsx" model="process.mapper.eat">
+            <field name="name">Shipment Import Mapper(Xlsx)</field>
+            <field name="type">xlsx</field>
+            <field name="model_name">mapper.shipment.sheet.import.eat</field>
+        </record>
+        <!--sequence-->
+        <record id="sequence_eat_default" model="ir.sequence">
+            <field name="name">EAT Sequence</field>
+            <field name="code">eat.sequence</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <!--Cron Job-->
+        <record model="ir.cron" id="connector_run_all_eat">
+            <field name="name">Connector: Run All Instances</field>
+            <field name="model_id" ref="model_connector_instance_eat"/>
+            <field name="state">code</field>
+            <field name="code">model.run_all()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+        </record>
+    </data>
+</odoo>

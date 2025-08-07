@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_odoo_connector_eat" name="Odoo Connector" web_icon="connector_base_eat,static/description/icon.png" groups="connector_base_eat.group_connector_user_eat"/>
+        <menuitem id="menu_connector_instance_eat" name="Connector Instance" parent="menu_odoo_connector_eat" action="eat_connector_instance_action"/>
+
+        <menuitem id="menu_connector_process_eat" name="Process" parent="menu_odoo_connector_eat"/>
+        <menuitem id="menu_process_config_eat" name="Process Config" parent="menu_connector_process_eat"
+                  action="eat_process_config_action" groups="base.group_no_one"/>
+        <menuitem id="menu_process_mapper_eat" name="Process Mapper" parent="menu_connector_process_eat"
+                  action="eat_process_mapper_action" groups="base.group_no_one"/>
+        <menuitem id="menu_process_protocol_eat" name="Process Protocol" parent="menu_connector_process_eat"
+                  action="eat_process_protocol_action" groups="base.group_no_one"/>
+        <menuitem id="menu_process_log_eat" name="Process Log" parent="menu_connector_process_eat" action="eat_process_log_action"/>
+
+        <menuitem id="menu_connector_product_eat" name="Product" parent="menu_odoo_connector_eat"/>
+        <menuitem id="menu_product_template_instance_eat" name="Product Template Instance" parent="menu_connector_product_eat" action="eat_product_template_instance_action"/>
+        <menuitem id="menu_product_instance_eat" name="Product Variant Instance" parent="menu_connector_product_eat" action="eat_product_instance_action"/>
+
+    </data>
+</odoo>

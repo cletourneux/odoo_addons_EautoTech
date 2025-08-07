@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.rule" id="connector_instance_eat_comp_rule">
+	        <field name="name">Connector Instance multi-company</field>
+	        <field name="model_id" ref="model_connector_instance_eat"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('company_id','=',False), ('company_id','in',company_ids)]</field>
+	    </record>
+        <record model="ir.rule" id="process_config_eat_comp_rule">
+	        <field name="name">Process Config multi-company</field>
+	        <field name="model_id" ref="model_process_config_eat"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('instance_id.company_id','=',False), ('instance_id.company_id','in',company_ids)]</field>
+	    </record>
+        <record model="ir.rule" id="product_product_instance_eat_comp_rule">
+	        <field name="name">Product Instance multi-company</field>
+	        <field name="model_id" ref="model_product_product_instance_eat"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('instance_id.company_id','=',False), ('instance_id.company_id','in',company_ids)]</field>
+	    </record>
+        <record model="ir.rule" id="product_template_instance_eat_comp_rule">
+	        <field name="name">Product Template Instance multi-company</field>
+	        <field name="model_id" ref="model_product_template_instance_eat"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('instance_id.company_id','=',False), ('instance_id.company_id','in',company_ids)]</field>
+	    </record>
+		<record model="ir.module.category" id="module_connector_base_eat">
+			<field name="name">Connector Access</field>
+			<field name="sequence">2</field>
+		</record>
+        <record model="res.groups" id="group_connector_user_eat">
+            <field name="name">Connector User</field>
+            <field name="category_id" ref="module_connector_base_eat"/>
+        </record>
+        <record model="res.groups" id="group_connector_manager_eat">
+            <field name="name">Connector Manager</field>
+            <field name="category_id" ref="module_connector_base_eat"/>
+	        <field name="implied_ids" eval="[(4, ref('group_connector_user_eat'))]"/>
+			<field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"/>
+        </record>
+	</data>
+</odoo>

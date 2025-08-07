@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="eat_process_log_form" model="ir.ui.view">
+            <field name="name">Process Log Form</field>
+            <field name="model">process.log.eat</field>
+            <field name="arch" type="xml">
+                <form string="Process Log">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="company_id" invisible="1"/>
+                                <field name="type"/>
+                                <field name="comment"/>
+                                <field name="file"/>
+                                <field name="file_name"/>
+                            </group>
+                            <group>
+                                <field name="process_id"/>
+                                <field name="instance_id"/>
+                                <field name="state"/>
+                                <field name="process_channel"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="eat_process_log_tree" model="ir.ui.view">
+            <field name="name">Process Log Tree</field>
+            <field name="model">process.log.eat</field>
+            <field name="arch" type="xml">
+                <list string="Process Log">
+                    <field name="instance_id"/>
+                    <field name="type"/>
+                    <field name="state"/>
+                    <field name="process_channel"/>
+                    <field name="comment"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="eat_process_log_search" model="ir.ui.view">
+            <field name="name">Process Log Search</field>
+            <field name="model">process.log.eat</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Process Log">
+                    <field name="instance_id"/>
+                    <field name="type"/>
+                </search>
+            </field>
+        </record>
+        
+        <record id="eat_process_log_action" model="ir.actions.act_window">
+            <field name="name">Process Log</field>
+            <field name="res_model">process.log.eat</field>
+            <field name="view_id" ref="eat_process_log_tree"/>
+		    <field name="search_view_id" ref="eat_process_log_search"/>
+            <field name="view_mode">list,form</field>
+        </record>
+    </data>
+</odoo>
